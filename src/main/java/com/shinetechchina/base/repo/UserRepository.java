@@ -32,7 +32,7 @@ public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 	@Override
 	long count();
 	
-	@PostAuthorize("returnObject.id == principal.id or hasAuthority('ADMIN')")
+	@PostAuthorize("returnObject.id == principal.id or hasRole('ADMIN')")
 	@Override
 	User findOne(Long id);
 	

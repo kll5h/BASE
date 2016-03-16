@@ -1,4 +1,4 @@
-package com.shinetechchina.base.conf;
+package com.shinetechchina.base.service;
 
 import java.util.Collection;
 

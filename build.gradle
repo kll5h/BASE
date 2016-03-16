@@ -37,18 +37,14 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-rest")
 	compile("org.projectlombok:lombok:1.16.6")
 	compile("com.alibaba:druid:1.0.17")
+	compile("joda-time:joda-time:2.9.2")
 	runtime("org.springframework.data:spring-data-rest-hal-browser")
 	runtime("mysql:mysql-connector-java")
 	//runtime("org.springframework.boot:spring-boot-starter-jetty")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-eclipse {
-	classpath {
-		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
-	}
-}
+
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.11'

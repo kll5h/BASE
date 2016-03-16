@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,11 +35,8 @@ public class User extends AbstractPersistable<Long> {
 	@Setter
 	@Getter
 	@NotEmpty
+	@JsonIgnore
 	private String password;
-
-	@Setter
-	@Getter	
-	private String salt;
 	
 	@Setter
 	@Getter
@@ -71,7 +70,6 @@ public class User extends AbstractPersistable<Long> {
 		this.setId(user.getId());
 		this.setUsername(user.getUsername());
 		this.setPassword(user.getPassword());
-		this.setSalt(user.getSalt());
 		this.setRoles(user.getRoles());
 		this.setAccountNonExpired(user.isAccountNonExpired());
 		this.setAccountNonLocked(user.isAccountNonLocked());
